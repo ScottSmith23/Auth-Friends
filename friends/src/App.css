@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.friends{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.friend{
+  border: 1px solid red;
+  width: 300px;
+  margin: 20px;
+}
