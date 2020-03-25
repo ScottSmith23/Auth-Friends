@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from "react";
 import {axiosWithAuth} from '../utils/axiosWithAuth';
 import FriendForm from './FriendForm';
+
 const FriendsList = props => {
  const [friends,setFriends] = useState([]);
+
+ const [newFriend, setNewFriend] = useState({
+  id:friend.id,
+  name: friend.name,
+  age: friend.age,
+  height: friend.height
+});
+
 
  useEffect(() => {
     getFriends();
@@ -42,11 +51,7 @@ const addFriend = (newFriend) => {
         <div className="error">{props.error}</div>
       ) : (
         friends.map(friend =>
-             <div key={friend.id} className="friend" >
-                 <p>{friend.name}</p>
-                 <p>{friend.age}</p>
-                 <p>{friend.email}</p>
-             </div>
+             <FriendCard friend={friend} />
              )
       )}
    </div> </>
